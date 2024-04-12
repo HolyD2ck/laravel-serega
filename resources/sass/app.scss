@@ -1,16 +1,9 @@
 // Fonts
 @import url("https://fonts.bunny.net/css?family=Nunito");
 
-@import "resources/sass/Вход.scss";
-@import "resources/sass/Контакты.scss";
-@import "resources/sass/О-нас.scss";
-@import "resources/sass/nicepage.scss";
-@import "resources/sass/Product-Details-Template.scss";
-@import "resources/sass/Product-List-Template.scss";
-@import "resources/sass/Thank-You-Page-Template.scss";
-
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "bootstrap/scss/bootstrap";
+@import "resources/sass/nicepage.scss";

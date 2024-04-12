@@ -12,11 +12,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//Главные маршруты сайта
 Route::get('/', function () {
     return view('index');
 });
-
+Route::get('/about', function () {
+    return view('О-нас');
+});
+Route::get('/contacts', function () {
+    return view('Контакты');
+});
+Route::get('/ttt', function () {
+    return view('Вход');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
