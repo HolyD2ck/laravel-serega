@@ -29,3 +29,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Маршруты Администратора:
+Route::get('/admin', \App\Http\Controllers\AdminController::class)->middleware('is_admin');
+
+//Маршруты Фотоаппаратов
+Route::resource('cameras', \App\Http\Controllers\CamerasController::class)->middleware('is_admin');
+
+//Маршруты Видеокамер
+Route::resource('videcameras', \App\Http\Controllers\VideocamerasController::class)->middleware('is_admin');
+
+//Маршруты Пользователей
+Route::resource('users', \App\Http\Controllers\UsersController::class)->middleware('is_admin');

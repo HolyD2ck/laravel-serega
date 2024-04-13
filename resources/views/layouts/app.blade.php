@@ -76,6 +76,7 @@
                     </div>
                     <div class="u-custom-menu u-nav-container">
                         <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
+
                             <li class="u-nav-item"><a
                                     class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
                                     href="{{ url('/') }}" style="padding: 10px 0px;">Главная</a>
@@ -100,6 +101,13 @@
                             <div class="u-inner-container-layout u-sidenav-overflow">
                                 <div class="u-menu-close"></div>
                                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                                    @auth
+                                        @if (Auth::user()->IsAdmin())
+                                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                                    href="{{ url('/admin') }}">Админ-Панель</a>
+                                            </li>
+                                        @endif
+                                    @endauth
                                     <li class="u-nav-item"><a class="u-button-style u-nav-link"
                                             href="{{ url('/') }}">Главная</a>
                                     </li>
@@ -131,7 +139,7 @@
                                             </a>
 
                                             <div class="dropdown-menu h" aria-labelledby="navbarDropdown"
-                                                style="background-color: black">
+                                                style="background-color: black;">
                                                 <a class="dropdown-item s" href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">
@@ -145,13 +153,6 @@
                                             </div>
                                         </li>
                                     @endguest
-                                    @auth
-                                        @if (Auth::user()->IsAdmin())
-                                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                    href="{{ url('/admin') }}">Админ-Панель</a>
-                                            </li>
-                                        @endif
-                                    @endauth
                                 </ul>
                             </div>
                         </div>
@@ -183,6 +184,12 @@
 
                 a.s:hover {
                     background-color: black !important
+                }
+
+                a.s {
+                    color: red;
+                    font-size: 20px !important;
+                    margin-left: 10px !important
                 }
             </style>
         </header>

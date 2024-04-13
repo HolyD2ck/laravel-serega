@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->text('Описание');
             $table->string('Фото');
             $table->string('Разрешение');
-            $table->boolean('Wi-Fi_поддержка');
+            $table->boolean('Wi_Fi_поддержка');
             $table->boolean('Bluetooth_поддержка');
             $table->timestamps();
         });
@@ -33,7 +33,7 @@ return new class extends Migration {
             $table->text('Описание');
             $table->string('Фото');
             $table->string('Разрешение');
-            $table->boolean('Wi-Fi_поддержка');
+            $table->boolean('Wi_Fi_поддержка');
             $table->boolean('Bluetooth_поддержка');
             $table->timestamps();
         });
