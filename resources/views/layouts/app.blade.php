@@ -130,11 +130,12 @@
                                                 {{ Auth::user()->name }}
                                             </a>
 
-                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                            <div class="dropdown-menu h" aria-labelledby="navbarDropdown"
+                                                style="background-color: black">
+                                                <a class="dropdown-item s" href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">
-                                                    {{ __('Logout') }}
+                                                    {{ __('Выйти') }}
                                                 </a>
 
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -178,6 +179,10 @@
                 .u-sticky-fixed.u-sticky-19c7:before,
                 .u-body.u-sticky-fixed .u-sticky-19c7:before {
                     borders: top right bottom left !important
+                }
+
+                a.s:hover {
+                    background-color: black !important
                 }
             </style>
         </header>

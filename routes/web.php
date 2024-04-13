@@ -22,9 +22,6 @@ Route::get('/about', function () {
 Route::get('/contacts', function () {
     return view('Контакты');
 });
-Route::get('/ttt', function () {
-    return view('Вход');
-});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
