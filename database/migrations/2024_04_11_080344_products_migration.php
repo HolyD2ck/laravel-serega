@@ -47,7 +47,7 @@ return new class extends Migration {
             $table->string('Производитель');
             $table->string('Материал');
             $table->string('Цвет');
-            $table->string('Страна производства');
+            $table->string('Страна_Производства');
             $table->boolean('Гарантия');
             $table->date('Дата_Выпуска');
             $table->timestamps();

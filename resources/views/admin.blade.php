@@ -172,7 +172,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/access" class="nav-link">
+                            <a href="/accessories" class="nav-link">
                                 <i class="nav-icon fas fa-search-dollar"></i>
                                 <p>
                                     Аксессуары
@@ -269,7 +269,7 @@
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
                                 </div>
-                                <a href="/access" class="small-box-footer">Подробнее <i
+                                <a href="/accessories" class="small-box-footer">Подробнее <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>

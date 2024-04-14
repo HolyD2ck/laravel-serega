@@ -43,4 +43,4 @@ Route::resource('videocameras', \App\Http\Controllers\VideocamerasController::cl
 Route::resource('accessories', \App\Http\Controllers\AccessoriesController::class)->middleware('is_admin');
 
 //Маршруты Пользователей
-Route::resource('users', \App\Http\Controllers\UsersController::class)->middleware('is_admin');
+Route::resource('users', \App\Http\Controllers\UserController::class)->middleware('is_admin');
