@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cameras;
+use App\Models\Videocameras;
 use Illuminate\Http\Request;
 
-class CamerasController extends Controller
+class VideocamerasController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $cameras = Cameras::paginate(10);
-        return view('cameras.index', compact('cameras'));
+        $videocameras = Videocameras::paginate(10);
+        return view('videocameras.index', compact('videocameras'));
     }
 
     /**
@@ -39,7 +39,7 @@ class CamerasController extends Controller
      */
     public function create()
     {
-        return view('cameras.create');
+        return view('videocameras.create');
     }
 
     /**
@@ -52,17 +52,17 @@ class CamerasController extends Controller
 
             if ($request->hasFile('Фото')) {
                 $file = $request->file('Фото');
-                $file_name = '/img/cameras/' . time() . $file->getClientOriginalName();
-                $file->move(public_path('img/cameras'), $file_name);
+                $file_name = '/img/videocameras/' . time() . $file->getClientOriginalName();
+                $file->move(public_path('img/videocameras'), $file_name);
                 $validatedData['Фото'] = $file_name;
                 $validatedData['Wi_Fi_поддержка'] = $validatedData['Wi_Fi_поддержка'] ?? 0;
                 $validatedData['Bluetooth_поддержка'] = $validatedData['Bluetooth_поддержка'] ?? 0;
             }
 
-            $cameras = Cameras::create($validatedData);
-            $cameras->save();
+            $videocameras = Videocameras::create($validatedData);
+            $videocameras->save();
 
-            return redirect()->route('cameras.index')->with('success', 'Данные успешно сохранены');
+            return redirect()->route('videocameras.index')->with('success', 'Данные успешно сохранены');
         } catch (\Exception $e) {
             return back()->withErrors(['error' => 'Ошибка при сохранении: ' . $e->getMessage()]);
         }
@@ -71,19 +71,19 @@ class CamerasController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cameras $cameras, $id)
+    public function show(Videocameras $videocameras, $id)
     {
-        $cameras = Cameras::find($id);
-        return view('cameras.show', compact('cameras'));
+        $videocameras = Videocameras::find($id);
+        return view('videocameras.show', compact('videocameras'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cameras $cameras, $id)
+    public function edit(Videocameras $videocameras, $id)
     {
-        $cameras = Cameras::find($id);
-        return view('cameras.edit', compact('cameras'));
+        $videocameras = Videocameras::find($id);
+        return view('videocameras.edit', compact('videocameras'));
     }
 
     /**
@@ -94,21 +94,21 @@ class CamerasController extends Controller
         try {
             $validatedData = $this->valid($request);
 
-            $cameras = Cameras::findOrFail($id);
+            $videocameras = Videocameras::findOrFail($id);
 
-            $file_name = $cameras->Фото;
+            $file_name = $videocameras->Фото;
 
             if ($request->hasFile('Фото')) {
                 try {
                     unlink(public_path($file_name));
                 } catch (\Exception $e) {
                 }
-                $file_name = '/img/cameras/' . time() . '.' . $request->Фото->getClientOriginalExtension();
-                $request->Фото->move(public_path('img/cameras'), $file_name);
+                $file_name = '/img/videocameras/' . time() . '.' . $request->Фото->getClientOriginalExtension();
+                $request->Фото->move(public_path('img/videocameras'), $file_name);
 
             }
 
-            $cameras->update([
+            $videocameras->update([
                 'Модель' => $validatedData['Модель'],
                 'Производитель' => $validatedData['Производитель'],
                 'Дата_Выпуска' => $validatedData['Дата_Выпуска'],
@@ -120,7 +120,7 @@ class CamerasController extends Controller
                 'Фото' => $file_name,
             ]);
 
-            return redirect()->route('cameras.index')->with('success', 'Данные успешно обновлены');
+            return redirect()->route('videocameras.index')->with('success', 'Данные успешно обновлены');
         } catch (\Exception $e) {
             return back()->withErrors(['error' => 'Ошибка при обновлении данных: ' . $e->getMessage()]);
         }
@@ -130,14 +130,14 @@ class CamerasController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cameras $cameras, $id)
+    public function destroy(Videocameras $videocameras, $id)
     {
         try {
-            $cameras = Cameras::find($id);
+            $videocameras = Videocameras::find($id);
 
-            $cameras->delete();
-            if ($cameras->Фото != '/img/user.jpg') {
-                unlink(public_path($cameras->Фото));
+            $videocameras->delete();
+            if ($videocameras->Фото != '/img/user.jpg') {
+                unlink(public_path($videocameras->Фото));
             }
             return redirect()->back()->with('success', 'Данные успешно удалены');
         } catch (\Exception $e) {

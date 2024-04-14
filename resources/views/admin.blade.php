@@ -164,7 +164,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/videos" class="nav-link">
+                            <a href="/videocameras" class="nav-link">
                                 <i class="nav-icon fas fa-video"></i>
                                 <p>
                                     Видеокамеры
@@ -254,7 +254,7 @@
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
                                 </div>
-                                <a href="/videos" class="small-box-footer">Подробнее <i
+                                <a href="/videocameras" class="small-box-footer">Подробнее <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>

@@ -139,7 +139,7 @@
                                             </a>
 
                                             <div class="dropdown-menu h" aria-labelledby="navbarDropdown"
-                                                style="background-color: black;">
+                                                style="background-color: rgb(255,255,255,0);">
                                                 <a class="dropdown-item s" href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">
@@ -183,13 +183,13 @@
                 }
 
                 a.s:hover {
-                    background-color: black !important
+                    background-color: rgb(255, 255, 255, 0) !important
                 }
 
                 a.s {
                     color: red;
                     font-size: 20px !important;
-                    margin-left: 10px !important
+                    margin-left: 1.5rem !important;
                 }
             </style>
         </header>

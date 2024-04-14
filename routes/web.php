@@ -37,7 +37,10 @@ Route::get('/admin', \App\Http\Controllers\AdminController::class)->middleware('
 Route::resource('cameras', \App\Http\Controllers\CamerasController::class)->middleware('is_admin');
 
 //Маршруты Видеокамер
-Route::resource('videcameras', \App\Http\Controllers\VideocamerasController::class)->middleware('is_admin');
+Route::resource('videocameras', \App\Http\Controllers\VideocamerasController::class)->middleware('is_admin');
+
+//Маршруты Аксессуаров
+Route::resource('accessories', \App\Http\Controllers\AccessoriesController::class)->middleware('is_admin');
 
 //Маршруты Пользователей
 Route::resource('users', \App\Http\Controllers\UsersController::class)->middleware('is_admin');

@@ -1,11 +1,11 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @vite('resources/sass/table.scss')
-<h1 class="t">Список Фотоаппаратов</h1>
-@if ($cameras == null)
+<h1 class="t">Список Видеокамер</h1>
+@if ($videocameras == null)
     <p><em>Загрузка...</em></p>
 @else
     <button class="btn btn-secondary l">
-        <a href="/cameras/create" style="color: inherit; text-decoration: none;">Создать Фотоаппарат</a>
+        <a href="/videocameras/create" style="color: inherit; text-decoration: none;">Создать Видеокамеру</a>
     </button>
     <button class="btn btn-secondary l">
         <a href="/admin" style="color: inherit; text-decoration: none;">Вернуться Назад</a>
@@ -29,28 +29,28 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($cameras as $camera)
+            @foreach ($videocameras as $videocamera)
                 <tr>
-                    <td>{{ $camera->id }}</td>
-                    <td>{{ $camera->Модель }}</td>
-                    <td>{{ $camera->Производитель }}</td>
-                    <td>{{ $camera->Цена }} ₽</td>
-                    <td><img class="db" src="{{ $camera->Фото }}"></td>
-                    <td>{{ $camera->Разрешение }}</td>
-                    <td>{{ $camera->Wi_Fi_поддержка == 1 ? '✓' : '✕' }}</td>
-                    <td>{{ $camera->Bluetooth_поддержка == 1 ? '✓' : '✕' }}</td>
+                    <td>{{ $videocamera->id }}</td>
+                    <td>{{ $videocamera->Модель }}</td>
+                    <td>{{ $videocamera->Производитель }}</td>
+                    <td>{{ $videocamera->Цена }} ₽</td>
+                    <td><img class="db" src="{{ $videocamera->Фото }}"></td>
+                    <td>{{ $videocamera->Разрешение }}</td>
+                    <td>{{ $videocamera->Wi_Fi_поддержка == 1 ? '✓' : '✕' }}</td>
+                    <td>{{ $videocamera->Bluetooth_поддержка == 1 ? '✓' : '✕' }}</td>
                     <td>
                         <button class="btn btn-secondary">
                             <a style="color: inherit; text-decoration: none;"
-                                href="{{ url("cameras/{$camera->id}/edit") }}">Изменить</a>
+                                href="{{ url("videocameras/{$videocamera->id}/edit") }}">Изменить</a>
                         </button>
                         <br>
                         <br>
                         <button class="btn btn-secondary">
                             <a style="color: inherit; text-decoration: none;"
-                                href="{{ route('cameras.show', ['camera' => $camera]) }}">Подробности</a>
+                                href="{{ route('videocameras.show', ['videocamera' => $videocamera]) }}">Подробности</a>
                         </button>
-                        <form method="post" action="{{ route('cameras.destroy', $camera->id) }}">
+                        <form method="post" action="{{ route('videocameras.destroy', $videocamera->id) }}">
                             <br>
                             @csrf
                             @method('DELETE')
@@ -64,7 +64,7 @@
         </tbody>
     </table>
     <div class="pagination-nav">
-        {{ $cameras->links() }}
+        {{ $videocameras->links() }}
     </div>
 @endif
 <script>
