@@ -100,7 +100,9 @@ class AccessoriesController extends Controller
 
             if ($request->hasFile('Фото')) {
                 try {
-                    unlink(public_path($file_name));
+                    if ($accessories->Фото != '/img/user.jpg' && !str_contains($accessories->Фото, '/faker/')) {
+                        unlink(public_path($file_name));
+                    }
                 } catch (\Exception $e) {
                 }
                 $file_name = '/img/accessories/' . time() . '.' . $request->Фото->getClientOriginalExtension();
@@ -137,12 +139,18 @@ class AccessoriesController extends Controller
             $accessories = Accessories::find($id);
 
             $accessories->delete();
-            if ($accessories->Фото != '/img/user.jpg') {
+            if ($accessories->Фото != '/img/user.jpg' && !str_contains($accessories->Фото, '/faker/')) {
                 unlink(public_path($accessories->Фото));
             }
             return redirect()->back()->with('success', 'Данные успешно удалены');
         } catch (\Exception $e) {
             return back()->withErrors(['error' => 'Ошибка при удалении: ' . $e->getMessage()]);
         }
+    }
+    public function shop(Request $request)
+    {
+        session()->put('shop_url', $request->url());
+        $products = Accessories::paginate(6);
+        return view('accessories.shop', compact('products'));
     }
 }

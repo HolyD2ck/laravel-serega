@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -12,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10);
+        $users = User::paginate(5);
         return view('users.index', compact('users'));
     }
 
@@ -54,6 +55,8 @@ class UserController extends Controller
                 $validatedData['avatar'] = $file_name;
             }
 
+            $validatedData['password'] = Hash::make($validatedData['password']);
+
             $user = User::create($validatedData);
             $user->save();
 
@@ -66,7 +69,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user, $id)
+    public function show($id)
     {
         $user = User::find($id);
         return view('users.show', compact('user'));
@@ -75,7 +78,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user, $id)
+    public function edit($id)
     {
         $user = User::find($id);
         return view('users.edit', compact('user'));
@@ -95,13 +98,17 @@ class UserController extends Controller
 
             if ($request->hasFile('avatar')) {
                 try {
-                    unlink(public_path($file_name));
+                    if ($user->Фото != '/img/user.jpg' && !str_contains($user->Фото, '/faker/')) {
+                        unlink(public_path($file_name));
+                    }
                 } catch (\Exception $e) {
                 }
                 $file_name = '/img/avatars/' . time() . '.' . $request->avatar->getClientOriginalExtension();
                 $request->avatar->move(public_path('img/avatars'), $file_name);
 
             }
+
+            $validatedData['password'] = Hash::make($validatedData['password']);
 
             $user->update([
                 'name' => $validatedData['name'],
@@ -128,7 +135,7 @@ class UserController extends Controller
             $user = User::find($id);
 
             $user->delete();
-            if ($user->avatar != '/img/user.jpg') {
+            if ($user->Фото != '/img/user.jpg' && !str_contains($user->Фото, '/faker/')) {
                 unlink(public_path($user->avatar));
             }
             return redirect()->back()->with('success', 'User deleted successfully');

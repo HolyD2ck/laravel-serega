@@ -22,8 +22,8 @@
     <meta name="keywords"
         content="Mobile App Development, ​Stimulate your cognitive abilities while having fun, What We Do, Testimonials, Company Services, ​Love the way you work together?, Our Portfolio, About Us, ​Our way, Get in Touch, ​Level up your brand">
     <meta name="description" content="">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="../jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="../nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 6.3.1, nicepage.com">
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet"
@@ -53,7 +53,7 @@
         <header class="u-clearfix u-header u-sticky u-sticky-19c7 u-white u-header " id="sec-d402">
             <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
                 <a href="/" class="u-image u-logo u-image-1" data-image-width="920" data-image-height="920">
-                    <img src="images/png-transparent-computer-icons-camera-ios-7-camera-purple-camera-lens-photography.png"
+                    <img src="/images/png-transparent-computer-icons-camera-ios-7-camera-purple-camera-lens-photography.png"
                         class="u-logo-image u-logo-image-1">
                 </a>
                 <nav class="u-menu u-menu-hamburger u-offcanvas u-menu-1" data-responsive-from="XL">
@@ -161,7 +161,7 @@
                     </div>
                 </nav>
                 <h1 class="u-text u-text-default u-text-palette-5-base u-text-1">Новый Взгляд</h1><!--shopping_cart-->
-                <a class="u-shopping-cart u-shopping-cart-1" href="#sec-6215"><span
+                <a class="u-shopping-cart u-shopping-cart-1" href="{{ url('/cart') }}"><span
                         class="u-icon u-icon-circle u-palette-1-base u-shopping-cart-icon u-text-white u-icon-1"><svg
                             class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16"
                             style="">

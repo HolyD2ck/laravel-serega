@@ -82,15 +82,15 @@
         display: block;
         padding: 0.5rem 0.75rem;
         border-radius: 0.25rem;
-        background-color: purple;
-        color: white;
+        background-color: purple !important;
+        color: white !important;
         text-decoration: none;
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     }
 
     .page-link:hover {
-        background-color: #7851a9;
-        color: white;
+        background-color: #7851a9 !important;
+        color: white !important;
     }
 
     .page-link:focus {
@@ -98,13 +98,13 @@
     }
 
     .page-item.active.page-link {
-        background-color: purple;
-        color: white;
+        background-color: purple !important;
+        color: white !important;
     }
 
     .page-item.disabled.page-link {
-        background-color: purple;
-        color: white;
+        background-color: purple !important;
+        color: white !important;
         cursor: not-allowed;
     }
 

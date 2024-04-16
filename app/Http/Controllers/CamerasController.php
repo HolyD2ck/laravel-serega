@@ -100,7 +100,9 @@ class CamerasController extends Controller
 
             if ($request->hasFile('Фото')) {
                 try {
-                    unlink(public_path($file_name));
+                    if ($cameras->Фото != '/img/user.jpg' && !str_contains($cameras->Фото, '/faker/')) {
+                        unlink(public_path($file_name));
+                    }
                 } catch (\Exception $e) {
                 }
                 $file_name = '/img/cameras/' . time() . '.' . $request->Фото->getClientOriginalExtension();
@@ -134,14 +136,21 @@ class CamerasController extends Controller
     {
         try {
             $cameras = Cameras::find($id);
-
             $cameras->delete();
-            if ($cameras->Фото != '/img/user.jpg') {
+
+            if ($cameras->Фото != '/img/user.jpg' && !str_contains($cameras->Фото, '/faker/')) {
                 unlink(public_path($cameras->Фото));
             }
             return redirect()->back()->with('success', 'Данные успешно удалены');
         } catch (\Exception $e) {
             return back()->withErrors(['error' => 'Ошибка при удалении: ' . $e->getMessage()]);
         }
+    }
+
+    public function shop(Request $request)
+    {
+        session()->put('shop_url', $request->url());
+        $products = Cameras::paginate(6);
+        return view('cameras.shop', compact('products'));
     }
 }

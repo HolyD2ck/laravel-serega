@@ -1,0 +1,36 @@
+body {
+    background-color: #f3f3f3;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 20px;
+}
+
+.cart-table {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.cart-table img {
+    width: 70px;
+    height: auto;
+}
+
+.cart-summary {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.checkout-btn {
+    margin-top: 20px;
+}
+
+.product-name {
+    margin-left: 15px;
+}
