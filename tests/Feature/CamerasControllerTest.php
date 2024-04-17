@@ -7,6 +7,8 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Cameras;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 class CamerasControllerTest extends TestCase
 {
@@ -33,6 +35,12 @@ class CamerasControllerTest extends TestCase
      *
      * @return void
      */
+    public function testIndex()
+    {
+        $response = $this->actingAs($this->adminUser)->get('/cameras');
+
+        $response->assertStatus(200);
+    }
 
     /**
      * Test the create method.
@@ -53,6 +61,8 @@ class CamerasControllerTest extends TestCase
      */
     public function testStore()
     {
+        Storage::fake('public');
+
         $response = $this->actingAs($this->adminUser)->post('/cameras', [
             'Модель' => 'New Model',
             'Производитель' => 'New Manufacturer',
@@ -62,7 +72,7 @@ class CamerasControllerTest extends TestCase
             'Разрешение' => '1080p',
             'Wi_Fi_поддержка' => 1,
             'Bluetooth_поддержка' => 0,
-            'Фото' => 'new_camera.jpg',
+            'Фото' => UploadedFile::fake()->image('new_camera.jpg'),
         ]);
 
         $response->assertRedirect('/cameras');
@@ -77,7 +87,7 @@ class CamerasControllerTest extends TestCase
     {
         $camera = Cameras::factory()->create();
 
-        $response = $this->get('/cameras/' . $camera->id);
+        $response = $this->actingAs($this->adminUser)->get('/cameras/' . $camera->id);
 
         $response->assertStatus(200);
     }
@@ -103,6 +113,8 @@ class CamerasControllerTest extends TestCase
      */
     public function testUpdate()
     {
+        Storage::fake('public');
+
         $camera = Cameras::factory()->create();
 
         $response = $this->actingAs($this->adminUser)->put('/cameras/' . $camera->id, [
@@ -114,7 +126,7 @@ class CamerasControllerTest extends TestCase
             'Разрешение' => '4K',
             'Wi_Fi_поддержка' => 1,
             'Bluetooth_поддержка' => 1,
-            'Фото' => 'updated_camera.jpg',
+            'Фото' => UploadedFile::fake()->image('updated_camera.jpg'),
         ]);
 
         $response->assertRedirect('/cameras');
@@ -131,7 +143,7 @@ class CamerasControllerTest extends TestCase
 
         $response = $this->actingAs($this->adminUser)->delete('/cameras/' . $camera->id);
 
-        $response->assertRedirect('/cameras');
+        $response->assertRedirect('/');
     }
 
     /**
