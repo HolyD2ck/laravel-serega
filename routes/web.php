@@ -71,3 +71,4 @@ Route::resource('accessories', \App\Http\Controllers\AccessoriesController::clas
 //Маршруты Пользователей
 Route::resource('users', \App\Http\Controllers\UserController::class)->middleware('is_admin');
 
+Route::get('/orders', [App\Http\Controllers\OrdersController::class, 'index'])->name('orders.index');
