@@ -42,9 +42,13 @@ Route::get('/videocameras/shop', [\App\Http\Controllers\VideocamerasController::
 
 Route::get('/accessories/shop', [\App\Http\Controllers\AccessoriesController::class, 'shop']);
 
-Route::get('/cart/add/{id}', [\App\Http\Controllers\CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart/add/{type}/{id}', [\App\Http\Controllers\CartController::class, 'addToCart'])->name('cart.add');
+
 Route::get('/cart/remove/{id}', [App\Http\Controllers\CartController::class, 'removeFromCart'])->name('cart.remove');
-Route::get('/checkout', [App\Http\Controllers\CartController::class, 'showCheckoutForm'])->name('checkout');
+
+Route::get('/checkout/form', [App\Http\Controllers\CartController::class, 'showCheckoutForm'])->name('checkout');
+
+Route::post('/checkout', [App\Http\Controllers\CartController::class, 'submitCheckoutForm'])->name('checkout.submit');
 
 
 Route::get('/cart', function () {

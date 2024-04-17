@@ -150,6 +150,6 @@ class VideocamerasController extends Controller
     {
         session()->put('shop_url', $request->url());
         $products = Videocameras::paginate(6);
-        return view('cameras.shop', compact('products'));
+        return view('videocameras.shop', compact('products'));
     }
 }

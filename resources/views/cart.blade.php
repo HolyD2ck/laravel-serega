@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @vite('resources/sass/cart.scss')
+
 @section('content')
     <div class="container py-5">
         <div class="row">
@@ -60,7 +61,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Оформление заказа</h2>
-            <form action="{{ route('checkout') }}" method="post">
+            <form action="{{ route('checkout.submit') }}" method="post" class="form">
                 @csrf
                 <div class="form-group">
                     <label for="name">Имя:</label>
@@ -82,7 +83,13 @@
                     <label for="csv">CSV код:</label>
                     <input type="text" id="csv" name="csv" required>
                 </div>
-                <button type="submit" class="btn btn-success">Подтвердить</button>
+                @if (Auth::guest())
+                    <p>Пожалуйста, <a href="{{ route('login') }}">войдите в систему</a> или <a
+                            href="{{ route('register') }}">зарегистрируйтесь</a>, чтобы сделать заказ.</p>
+                @else
+                    <button type="submit" class="btn btn-success">Подтвердить</button>
+                @endif
+
             </form>
         </div>
         <style>
@@ -105,8 +112,8 @@
                 padding: 20px;
                 border: 1px solid #888;
                 width: 80%;
+                text-align: center;
             }
-
 
             .close {
                 color: #aaa;
@@ -120,6 +127,44 @@
                 color: black;
                 text-decoration: none;
                 cursor: pointer;
+            }
+
+            .form {
+                display: inline-block;
+                text-align: left;
+                width: 100%;
+            }
+
+            .form-group {
+                margin-bottom: 10px;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 5px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 10px 20px;
+                margin-top: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #4CAF50;
+                color: white;
+                cursor: pointer;
+            }
+
+            .btn:hover {
+                background-color: #45a049;
             }
         </style>
     </div>

@@ -18,7 +18,8 @@
                                     <strong>Поддержка Bluetooth:</strong>
                                     {{ $product->Bluetooth_поддержка ? 'Да' : 'Нет' }}
                                 </p>
-                                <a href="#" class="btn btn-purple" style="color:white">Добавить в корзину</a>
+                                <a href="{{ route('cart.add', ['type' => 'videocamera', 'id' => $product->id]) }}"
+                                    class="btn btn-purple" style="color:white">Добавить в корзину</a>
                             </div>
                         </div>
                     </div>

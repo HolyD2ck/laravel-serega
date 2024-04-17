@@ -24,5 +24,9 @@ class Accessories extends Model
         'Гарантия',
         'Дата_Выпуска'
     ];
+    public function orders()
+    {
+        return $this->morphToMany(\App\Models\OrdersModel::class, 'orderable')->withPivot('quantity');
+    }
 
 }

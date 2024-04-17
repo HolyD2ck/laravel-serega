@@ -23,4 +23,9 @@ class Videocameras extends Model
             'Wi_Fi_поддержка',
             'Bluetooth_поддержка'
         ];
+    public function orders()
+    {
+        return $this->morphToMany(\App\Models\OrdersModel::class, 'orderable')->withPivot('quantity');
+    }
+
 }
