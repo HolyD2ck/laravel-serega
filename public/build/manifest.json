@@ -8,5 +8,111 @@
     "file": "assets/app-50ad3ebf.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
+  },
+  "resources/sass/bb.scss": {
+    "file": "assets/bb-26966599.css",
+    "isEntry": true,
+    "src": "resources/sass/bb.scss"
+  },
+  "resources/sass/cart.scss": {
+    "file": "assets/cart-4baa8a7e.css",
+    "isEntry": true,
+    "src": "resources/sass/cart.scss"
+  },
+  "resources/sass/create.scss": {
+    "file": "assets/create-85e8dbc3.css",
+    "isEntry": true,
+    "src": "resources/sass/create.scss"
+  },
+  "resources/sass/images/-white-teeth-keeps-hands-stomach-being-high-spirit-wears-white-shirt-rejoices-positive-moments-life-people-emotions-concept.jpg": {
+    "file": "assets/-white-teeth-keeps-hands-stomach-being-high-spirit-wears-white-shirt-rejoices-positive-moments-life-people-emotions-concept-eba0acb4.jpg",
+    "src": "resources/sass/images/-white-teeth-keeps-hands-stomach-being-high-spirit-wears-white-shirt-rejoices-positive-moments-life-people-emotions-concept.jpg"
+  },
+  "resources/sass/images/1222_150.jpg": {
+    "file": "assets/1222_150-f213d1c7.jpg",
+    "src": "resources/sass/images/1222_150.jpg"
+  },
+  "resources/sass/images/360_F_416977415_2honZHq2HwlaB7GxMRMnYu4ib0RSgPPZ.jpg": {
+    "file": "assets/360_F_416977415_2honZHq2HwlaB7GxMRMnYu4ib0RSgPPZ-46d79170.jpg",
+    "src": "resources/sass/images/360_F_416977415_2honZHq2HwlaB7GxMRMnYu4ib0RSgPPZ.jpg"
+  },
+  "resources/sass/images/3e323ee9-9fff-450e-aabf-b9b006d5620c.jpg": {
+    "file": "assets/3e323ee9-9fff-450e-aabf-b9b006d5620c-bd5e1c32.jpg",
+    "src": "resources/sass/images/3e323ee9-9fff-450e-aabf-b9b006d5620c.jpg"
+  },
+  "resources/sass/images/44d5d282-18f7-4295-9493-b2865af9bf3d.jpg": {
+    "file": "assets/44d5d282-18f7-4295-9493-b2865af9bf3d-6a07e417.jpg",
+    "src": "resources/sass/images/44d5d282-18f7-4295-9493-b2865af9bf3d.jpg"
+  },
+  "resources/sass/images/ad-min.jpg": {
+    "file": "assets/ad-min-7a9e4ed1.jpg",
+    "src": "resources/sass/images/ad-min.jpg"
+  },
+  "resources/sass/images/archirect-male-workers-gather-together-workplace-surrounded-with-modern-5667.jpg": {
+    "file": "assets/archirect-male-workers-gather-together-workplace-surrounded-with-modern-5667-57fc763d.jpg",
+    "src": "resources/sass/images/archirect-male-workers-gather-together-workplace-surrounded-with-modern-5667.jpg"
+  },
+  "resources/sass/images/cheerful-middle-aged-woman-with-curly-hair.jpg": {
+    "file": "assets/cheerful-middle-aged-woman-with-curly-hair-3607bda9.jpg",
+    "src": "resources/sass/images/cheerful-middle-aged-woman-with-curly-hair.jpg"
+  },
+  "resources/sass/images/dff.jpg": {
+    "file": "assets/dff-dd120ce5.jpg",
+    "src": "resources/sass/images/dff.jpg"
+  },
+  "resources/sass/images/f57d0f78d75447495753281858496891.png": {
+    "file": "assets/f57d0f78d75447495753281858496891-38c39e56.png",
+    "src": "resources/sass/images/f57d0f78d75447495753281858496891.png"
+  },
+  "resources/sass/images/fgfgfg5t.jpg": {
+    "file": "assets/fgfgfg5t-eac41c9c.jpg",
+    "src": "resources/sass/images/fgfgfg5t.jpg"
+  },
+  "resources/sass/images/klklu8-min.jpg": {
+    "file": "assets/klklu8-min-ed21969a.jpg",
+    "src": "resources/sass/images/klklu8-min.jpg"
+  },
+  "resources/sass/images/ncept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation.jpg": {
+    "file": "assets/ncept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation-bcbe310c.jpg",
+    "src": "resources/sass/images/ncept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation.jpg"
+  },
+  "resources/sass/images/vbvbbv.jpg": {
+    "file": "assets/vbvbbv-db02e98d.jpg",
+    "src": "resources/sass/images/vbvbbv.jpg"
+  },
+  "resources/sass/shop.scss": {
+    "file": "assets/shop-474e4b69.css",
+    "isEntry": true,
+    "src": "resources/sass/shop.scss"
+  },
+  "resources/sass/show.scss": {
+    "file": "assets/show-f98212ba.css",
+    "isEntry": true,
+    "src": "resources/sass/show.scss"
+  },
+  "resources/sass/table.scss": {
+    "file": "assets/table-da99fea6.css",
+    "isEntry": true,
+    "src": "resources/sass/table.scss"
+  },
+  "resources/sass/Вход.scss": {
+    "file": "assets/Вход-e5c7bb84.css",
+    "isEntry": true,
+    "src": "resources/sass/Вход.scss"
+  },
+  "resources/sass/Главная.scss": {
+    "file": "assets/Главная-cecb6988.css",
+    "isEntry": true,
+    "src": "resources/sass/Главная.scss"
+  },
+  "resources/sass/Контакты.scss": {
+    "file": "assets/Контакты-878fdf56.css",
+    "isEntry": true,
+    "src": "resources/sass/Контакты.scss"
+  },
+  "resources/sass/О-нас.scss": {
+    "file": "assets/О-нас-8f751474.css",
+    "isEntry": true,
+    "src": "resources/sass/О-нас.scss"
   }
 }

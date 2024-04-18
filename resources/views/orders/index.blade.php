@@ -1,17 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Orders</h1>
-
+    @vite('resources/sass/table.scss')
+    <h1>Заказы</h1>
+    <button class="btn btn-secondary l">
+        <a href="/cameras/create" style="color: inherit; text-decoration: none;">Создать Фотоаппарат</a>
+    </button>
+    <button class="btn btn-secondary l">
+        <a href="/admin" style="color: inherit; text-decoration: none;">Вернуться Назад</a>
+    </button>
+    <br>
+    <br>
+    <hr>
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>Total Price</th>
-                <th>Orderables</th>
+                <th>id</th>
+                <th>Клиент</th>
+                <th>Почта</th>
+                <th>Адресс</th>
+                <th>Итоговая Цена</th>
+                <th>Заказанные Товары</th>
             </tr>
         </thead>
         <tbody>
@@ -24,15 +33,19 @@
                     <td>{{ $order->total_price }}</td>
                     <td>
                         @foreach ($order->cameras as $camera)
-                            <p>Camera: {{ $camera->name }} - Quantity: {{ $camera->pivot->quantity }}</p>
+                            <p><img src=" {{ $camera->Фото }}"> {{ $camera->Модель }}: - Количество:
+                                {{ $camera->pivot->quantity }}
+                            </p>
                         @endforeach
 
                         @foreach ($order->videocameras as $videocamera)
-                            <p>Video Camera: {{ $videocamera->name }} - Quantity: {{ $videocamera->pivot->quantity }}</p>
+                            <p><img src=" {{ $videocamera->Фото }}"> {{ $videocamera->Модель }} - Количество:
+                                {{ $videocamera->pivot->quantity }}</p>
                         @endforeach
 
                         @foreach ($order->accessories as $accessory)
-                            <p>Accessory: {{ $accessory->name }} - Quantity: {{ $accessory->pivot->quantity }}</p>
+                            <p><img src=" {{ $accessory->Фото }}"> {{ $accessory->Название }} - Количество:
+                                {{ $accessory->pivot->quantity }}</p>
                         @endforeach
                     </td>
                 </tr>
